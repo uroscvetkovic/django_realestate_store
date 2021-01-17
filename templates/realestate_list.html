@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-2  bg-light position-fixed" id="sticky-sidebar" style="padding: 7px;">
+      <h3>Show</h3>
+      <br>
+      <h4><a href="{% url 'realestate_list' %}" class="btn btn-dark">All</a></h4>
+
+      {% for t in types %}
+        <h4 ><a href="{% url 'realestate_list' t.name %}" class="btn btn-dark">{{t.name}}</a></h4>
+      {% endfor %}
+    </div>
+    <div class="col offset-3" id="main" style="padding: 7px;">
+      {% for realestate in realestates %}
+      <div class="card mb-4" style="max-width: 600px;">
+        <div class="row g-0">
+          <div class="col-md-4" style="display: flex; padding: 7px 7px; box-sizing: border-box; width: 175px; height: 175px;">
+            <img src="{{realestate.image.url}}" alt="{{realestate.image.url}}" style="display: flex; box-sizing: border-box; width: 160px; height: 160px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a href="{% url 'realestate_detail' realestate.id %}"><h5 class="card-title">{{realestate.sity}}, {{realestate.address}}</h5></a>
+
+              <p class="card-text">{{realestate.description}}</p>
+              <p class="card-text"><small class="text-muted">Posted {{realestate.date}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}

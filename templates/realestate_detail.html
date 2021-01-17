@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail{% endblock title %}
+
+
+
+{% block content %}
+<div class="d-flex justify-content-center" style="padding: 20px 20px;">
+  <div class="card " style="width: 40rem;">
+    <img src="{{object.image.url}}" class="card-img-top align-self-center" alt="..." style="padding: 15px 15px; width:550px; height:auto;">
+    <div class="card-body">
+      <h5 class="card-title">{{object.sity}}, {{object.address}}</h5>
+      <p class="card-text">{{object.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Type  &middot; {{object.type}}</li>
+      <li class="list-group-item">Area  &middot; {{object.areasqm}} m<sup>2</sup></li>
+      <li class="list-group-item">Available  &middot; {% if object.available is True  %}Yes{% else %}No{% endif %}</li>
+      <li class="list-group-item">Price  &middot; {{object.price}}</li>
+      <li class="list-group-item">Email  &middot; {{object.email}}</li>
+      <li class="list-group-item">Phone Number  &middot; {{object.phone_number}}</li>
+      <li class="list-group-item">Posted on date  &middot; {{object.date}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Add to Cart</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}
