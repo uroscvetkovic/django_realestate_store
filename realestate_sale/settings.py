@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #local
-    'realestate_store.apps.RealestateStoreConfig'
+    'realestate_store.apps.RealestateStoreConfig',
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+cart_session_key = 'cartsessionkey'

@@ -16,13 +16,17 @@
       <li class="list-group-item">Type  &middot; {{object.type}}</li>
       <li class="list-group-item">Area  &middot; {{object.areasqm}} m<sup>2</sup></li>
       <li class="list-group-item">Available  &middot; {% if object.available is True  %}Yes{% else %}No{% endif %}</li>
-      <li class="list-group-item">Price  &middot; {{object.price}}</li>
+      <li class="list-group-item">Price  &middot; ${{object.price}}</li>
       <li class="list-group-item">Email  &middot; {{object.email}}</li>
       <li class="list-group-item">Phone Number  &middot; {{object.phone_number}}</li>
       <li class="list-group-item">Posted on date  &middot; {{object.date}}</li>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">Add to Cart</a>
+      <form action="{% url 'add_to_cart' object.id %}" method="Post">
+        <button type="submit" class="btn btn-dark ml-2">Add to cart</button>
+        {% csrf_token %}
+      </form>
+
     </div>
   </div>
 </div>
