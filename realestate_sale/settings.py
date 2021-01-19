@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #local
     'realestate_store.apps.RealestateStoreConfig',
     'cart.apps.CartConfig',
+    'order.apps.OrderConfig',
 ]
 
 MIDDLEWARE = [

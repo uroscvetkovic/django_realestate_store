@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" style="height: 100vh; overflow: auto;">
   <head>
     <meta charset="utf-8">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <title>  {% block title %}Real Estate Sale{% endblock title %}</title>
   </head>
-  <body style="background-image: linear-gradient(40deg, #00a4a6, #0c2231);">
+  <body style="background-image: linear-gradient(40deg, #00a4a6, #0c2231); height: 100vh; overflow: auto;">
     <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
       <div class="container-fluid">
         <h2><a class="navbar-brand" href="http://127.0.0.1:8000/">Real Estate Store
@@ -20,12 +20,13 @@
     </nav>
 
 
-    <main style="background-image: linear-gradient(40deg, #00a4a6, #0c2231);">
+    <main style="">
       <div class="container-fluid">
         {% block content %}
         {% endblock content %}
       </div>
     </main>
+
 
   </body>
 </html>

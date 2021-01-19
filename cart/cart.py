@@ -21,11 +21,14 @@ class Cart(object):
         for item in cartCopy.values():
             item['price'] = Decimal(item['price'])
             item['sum_price'] = item['price']
-            yield
+            yield item
 
 
     def __len__(self):
         return sum(1 for item in self.cart.values())
+
+    def full_price(self):
+        return sum(float(item['price']) for item in self.cart.values())
 
     def add(self, realestate):
         realestate_id = str(realestate.id)
